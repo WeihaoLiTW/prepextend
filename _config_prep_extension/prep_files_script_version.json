@@ -1,0 +1,85 @@
+{ 
+
+  "C:\One Drive\OneDrive - 維新網股份有限公司\Schedule Flow\test_file":
+    {
+      "test_flow":"2020.2",
+      "test_flow_with_error":"2020.2"
+    },
+
+  "C:\One Drive\OneDrive - 維新網股份有限公司\Prep Flow Pool\Completed Port List":
+    { 
+      "Completed Port List_Download":"2019.4",
+      "Completed Port List":"2019.4"
+    },
+
+  "C:\One Drive\OneDrive - 維新網股份有限公司\Prep Flow Pool\Pre-Booking":
+    { 
+      "Download_Pre-Booking":"2019.4",
+      "Pre-Booking":"2019.4"
+    },
+
+  "C:\One Drive\OneDrive - 維新網股份有限公司\Prep Flow Pool\GreenX":
+    {
+      "Download_GreenX":"2020.2",
+      "Download-B_GreenX":"2020.2",
+      "GreenX":"2020.2",
+      "GreenX_Step2":"2020.2"
+    },
+
+  "C:\One Drive\OneDrive - 維新網股份有限公司\Prep Flow Pool\GreenX_Rate":
+    { 
+      "Download_GreenX_Rate":"2020.2",
+      "GreenX_Rate":"2020.2"
+    },
+
+  "C:\One Drive\OneDrive - 維新網股份有限公司\Prep Flow Pool\Lifting Report":
+    {
+      "Download_SI_Lifting":"2019.4",
+      "SI_Lifting":"2019.4"
+    },
+
+  "C:\One Drive\OneDrive - 維新網股份有限公司\Prep Flow Pool\Funnel and KPI":
+    {
+      "Funnel and KPI":"2019.4",
+      "Booking-InProgrss-BK Portal":"2019.4",
+      "SI-InProgrss-BK Portal":"2019.4"
+    },
+
+  "C:\One Drive\OneDrive - 維新網股份有限公司\Prep Flow Pool\Revenue DataSource and Monthly Closing":
+    {
+      "Revenue DataSource and Monthly Closing":"2020.2",
+      "Revenue DataSource_Carrier X":"2020.2"
+    },
+
+  "C:\One Drive\OneDrive - 維新網股份有限公司\Prep Flow Pool\Price Competitve Price Tool":
+    {
+      "Download_Rate_Last-Version":"2019.4",
+      "Price Competitve Price Tool":"2019.4"
+    },
+
+  "C:\One Drive\OneDrive - 維新網股份有限公司\Prep Flow Pool\Price Trend":
+    {
+      "History_Rate_Archive":"2020.2",
+      "Download_Rate":"2020.2",
+      "Price Trend":"2020.2"
+    },
+
+  "C:\Google_Drive_BlueX\Shared Folder with RD\Contract Rate":
+    {
+      "Contract_Process_Step1":"2019.4",
+      "Contract_Process_Step2":"2019.4",
+      "Contract_Pre Process":"2019.4"
+    },
+
+  "C:\Google_Drive_BlueX\Shared Folder with RD\Contract_Processing\tableau_prep":
+    {
+      "contract_process":"2019.4"
+    },
+
+  "C:\One Drive\OneDrive - 維新網股份有限公司\Prep Flow Pool\Zoho":
+    {
+      "Zoho Raw Data Clean":"2020.2",
+      "Zoho Data Source":"2020.2"
+    }
+
+}
