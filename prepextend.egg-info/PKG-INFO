@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: prepextend
+Version: 2020.2.1
+Summary: to expand the functionality of Tableau prep
+Home-page: https://github.com/WeihaoLiTW/prep_extension
+Author: Weihao Li
+Author-email: weihao.li.tw@gmail.com
+License: UNKNOWN
+Description: # prepextend
+        the tools to expand the functions for the tableau prep builder
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Environment :: Win32 (MS Windows)
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

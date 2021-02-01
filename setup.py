@@ -11,19 +11,19 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="prepextension", # 
+    name="prepextend", # 
     version="2020.2.1",
     author="Weihao Li",
     author_email="weihao.li.tw@gmail.com",
     description="to expand the functionality of Tableau prep",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/WeihaoLiTW/prep_extension",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
+        "Environment :: Win32 (MS Windows)",
     ],
     python_requires='>=3.6',
 )
