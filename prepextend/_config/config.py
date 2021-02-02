@@ -9,33 +9,27 @@ import json
 from os.path import join
 import logging as log
 import pathlib
+from prepextend_config import general_config, version_assigned
 
 class config_set:
         
-    def __init__(self):
+    def __init__(self, 
+                 general_config = general_config, 
+                 version_assigned = version_assigned
+                 ):
         
-        self.config_dicr = self.config_dicr()
+        self.config = general_config
+        self.version_assigned = version_assigned
+        
         self.read_config()
-        self.read_custom_prep_versions()
+        self.read_version_assigned()
         
         self.prep_last_verison = self.prep_last_verison()
         
-        
-    def config_dicr(self):
-        
-        this_file_dir = pathlib.Path(__file__).parent.absolute()
-        config_locate = join(this_file_dir, "../../_config_prep_extension")
-        
-        return config_locate
-        
-        
+    
     def read_config(self):
         
-        log.debug(f"config_dir: {self.config_dicr}, config_file_path: {join(self.config_dicr, 'config.json')}")
-        f = open( join(self.config_dicr, 'config.json'), 'r', encoding = 'utf-8')
-        config = f.read().replace('\\', '\\\\')
-        # can't decode if not replace.  https://www.itread01.com/content/1528896154.html
-        config = json.loads(config)
+        config = self.config
         
         self.log_save_path = config['log_save_path']
         self.prep_script_path = config['prep_script_path']
@@ -44,18 +38,13 @@ class config_set:
         self.run_self_suffix = config['run_self_suffix']
         self.check_file_tag = config['check_file_tag']    
         self.slack_webhook_url = config['slack_webhook_url']
-        self.notify_slack_channel = config['notify_slack_channel']
-        self.notify_sender_name = config['notify_sender_name']
         self.flow_pool = config['flow_pool']
         self.ignore_tag = config['ignore_tag']
         
 
-    def read_custom_prep_versions(self):
-
-        log.debug(f"config_dir: {self.config_dicr}, config_file_path: {join(self.config_dicr, 'prep_files_script_version.json')}")        
-        v = open( join(self.config_dicr, 'prep_files_script_version.json'), 'r', encoding = 'utf-8')
-        prep_files_script_version = v.read().replace('\\', '\\\\')
-        self.prep_files_script_version = json.loads(prep_files_script_version)
+    def read_version_assigned(self):
+        
+        self.prep_files_script_version = self.version_assigned
         
 
     def prep_last_verison(self):

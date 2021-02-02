@@ -12,7 +12,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="prepextend", # 
-    version="2020.2.1",
+    version="2020.2.1.2",
     author="Weihao Li",
     author_email="weihao.li.tw@gmail.com",
     description="to expand the functionality of Tableau prep",

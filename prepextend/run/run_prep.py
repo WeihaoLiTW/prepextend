@@ -13,10 +13,10 @@ from math import ceil
 import logging as log
 from pandas import read_csv
 
-from prep_extension._config.config import config_set
-from prep_extension.common.api import time_utc_formated
-from prep_extension.common.api import send_message_to_slack
-from prep_extension.io.api import prep_read
+from prepextend._config.config import config_set
+from prepextend.common.api import time_utc_formated
+from prepextend.common.api import send_message_to_slack
+from prepextend.io.api import prep_read
     
 
 class prep_run:

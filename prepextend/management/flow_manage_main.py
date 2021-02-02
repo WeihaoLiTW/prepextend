@@ -9,11 +9,10 @@ import pandas as pd
 import logging as log
 from pandas.util import hash_pandas_object
 
-from prep_extension._config.config import config_set
-from prep_extension.io.api import prep_read
-from prep_extension.common.api import send_message_to_slack
-from prep_extension.common.api import list_files_path_in_folder
-
+from prepextend._config.config import config_set
+from prepextend.io.api import prep_read
+from prepextend.common.api import send_message_to_slack
+from prepextend.common.api import list_files_path_in_folder
 
 # In[]:
 

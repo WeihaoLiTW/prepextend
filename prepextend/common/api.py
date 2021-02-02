@@ -11,9 +11,7 @@ import datetime #for time stamp
 import requests
 import json
 
-from prep_extension._config.config import config_set
-
-
+from prepextend._config.config import config_set
 config = config_set()
 
 
@@ -46,8 +44,6 @@ def send_message_to_slack(main_msg,
                           sub_msgs_dict = 'None', 
                           color_sub_msg = 'None',
                           webhook_url = config.slack_webhook_url,
-                          channel = config.notify_slack_channel, 
-                          sender_name = config.notify_sender_name
                           ):
 
     # generate attachements
@@ -63,8 +59,6 @@ def send_message_to_slack(main_msg,
   
     # generate msg to slack api  
     payload = {
-        "channel" : channel,
-        "username" : sender_name,
         "text":main_msg,
         "attachments": attachments
         }

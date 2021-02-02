@@ -207,6 +207,7 @@ class prep_read:
                 baseType = self.input_name
                 connection_id = node['connectionId']
                 connection = connections[connection_id]
+                log.debug(f"list_sources, input, node_id = {node}, connection_id = {connection_id}, connection = {connection}")
                 # determine file_type
                 try:
                     # hyper 
@@ -223,16 +224,19 @@ class prep_read:
                         source_input = self.format_db(node, baseType, connection)
                     # tableauserver
                     if 'LoadSqlProxy' in node['nodeType']:
-                        source_input = self.format_tableauserver(node, baseType, connection)                       
+                        source_input = self.format_tableauserver(node, baseType, connection)
+                        
                     sources.append(source_input)
                     
                 except Exception:
-                    print(f"unusual case, flow:{self.path}, node_id:{node_id}, baseType:{baseType}, nodetype:{node['nodeType']}")
+                    print(f"some inputs cannot be decoded")
+                    print(f"flow:{self.path}, node_id:{node_id}, baseType:{baseType}, nodetype:{node['nodeType']}")
                     raise
                     
             if node['baseType'] == 'output':
                 baseType = self.output_name
                 # determine file_type
+                log.debug(f"list_sources, output, node_id = {node}, baseType = {baseType}")
                 try:
                     # hyper 
                     if 'WriteToHyper' in node['nodeType']:
@@ -242,11 +246,13 @@ class prep_read:
                         source_output = self.format_csv(node, baseType)
                     # tableauserver
                     if 'PublishExtract' in node['nodeType']:
-                        source_output = self.format_tableauserver(node, baseType)                        
-                    sources.append(source_output)                       
+                        source_output = self.format_tableauserver(node, baseType)  
                         
+                    sources.append(source_output) 
+                                              
                 except Exception:
-                    print(f"unusual case, flow:{self.self.path}, node_id:{node_id}, baseType:{baseType}, nodetype:{node['nodeType']}")
+                    print(f"some outputs cannot be decoded")
+                    print(f"flow:{self.path}, node_id:{node_id}, baseType:{baseType}, nodetype:{node['nodeType']}")
                     raise
 
         return sources
