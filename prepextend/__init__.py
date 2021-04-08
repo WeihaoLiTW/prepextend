@@ -10,8 +10,7 @@ from prepextend.management.api import (
     )
 
 from prepextend.run.api import (
-    prep_run,
-    run_prep_self_win
+    prep_run
     )
 
 from prepextend.io.api import (

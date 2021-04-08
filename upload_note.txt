@@ -1,0 +1,16 @@
+step 1
+
+command line
+cd this folder
+python setup.py sdist
+
+
+step 2
+in same folder
+python -m twine upload dist/*
+
+
+step 3
+type in 
+account:weihaoli
+pwd:same as laptop

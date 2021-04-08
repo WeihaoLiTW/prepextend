@@ -35,7 +35,6 @@ class config_set:
         self.prep_script_path = config['prep_script_path']
         self.retry_max = config['retry_max']
         self.credentials_file_suffix = config['credentials_file_suffix']
-        self.run_self_suffix = config['run_self_suffix']
         self.check_file_tag = config['check_file_tag']    
         self.slack_webhook_url = config['slack_webhook_url']
         self.flow_pool = config['flow_pool']

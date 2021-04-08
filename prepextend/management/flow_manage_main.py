@@ -18,14 +18,18 @@ from prepextend.common.api import list_files_path_in_folder
 
 class flow_manage:
     
-    def __init__(self, previous_all_sources = 'None'):
+    def __init__(self, previous_all_sources = None):
         
         self.config = config_set()
         self.flow_pool = self.config.flow_pool
         self.source_format = self.get_source_format()
         
-        if previous_all_sources == 'None':
-            self.all_sources_with_hash = self.get_all_sources_with_hash()
+        # import all sources
+        try: # value error when df = None, so apply try
+            if previous_all_sources == None:
+                self.all_sources_with_hash = self.get_all_sources_with_hash()
+        except:
+            self.all_sources_with_hash = previous_all_sources
     
     
     def get_source_format(self):

@@ -23,15 +23,16 @@ class prep_run:
     
     def __init__(self, 
                  prepfile_folder_path, 
-                 prepfile_name # No Filename Extension (.tfl)
+                 prepfile_name
                  ):
         
         self.folder_path = prepfile_folder_path
         self.file_name = prepfile_name
+        self.file_name_without_extension = os.path.splitext(self.file_name)[0]
 
         self.config = config_set()
         
-        self.prep_infor = prep_read(prep_path = join(self.folder_path, self.file_name + '.tfl') )
+        self.prep_infor = prep_read(prep_path = join(self.folder_path, self.file_name) )
         self.sources = self.prep_infor.list_sources()
         
         self.prep_version = self.run_verison()
@@ -75,7 +76,7 @@ class prep_run:
     
     def credentials_file_name(self):
         
-        credentials_file_name = self.file_name + self.config.credentials_file_suffix
+        credentials_file_name = self.file_name_without_extension + self.config.credentials_file_suffix
         log.debug(f"credentials:{credentials_file_name}")
         
         # check whether the credentials file exist, if yes, with it; if no, skip
@@ -105,7 +106,7 @@ class prep_run:
     def cmd_win(self):                       
         # prepare the cmd which is sent to tableau prep script
         located_prep_bat = '"' + join(self.prep_script_path, 'tableau-prep-cli.bat') + '"'
-        located_prep_file = ' -t ' + '"' + self.file_name + '.tfl' + '"'
+        located_prep_file = ' -t ' + '"' + self.file_name + '"'
         
         # cmd will be depend on whether there is a credential or not.
         if self.credentials_file_name != 'None':
