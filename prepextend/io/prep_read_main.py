@@ -93,9 +93,9 @@ class prep_read:
         con_type = 'localfile'      
         if baseType == self.input_name:
             try:
-                name = node['connectionAttributes']['dbname']
+                name = connection['connectionAttributes']['dbname'] # last update is in the connection
             except:
-                name = connection['connectionAttributes']['dbname']
+                name = node['connectionAttributes']['dbname']
          
         if baseType == self.output_name:          
             name = node['hyperOutputFile']
