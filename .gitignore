@@ -5,3 +5,8 @@ build/lib
 build
 *egg-info
 _tests
+_debug
+setup.py
+environment.yml
+upload_note.txt
+for reference

@@ -9,12 +9,14 @@ from zipfile import ZipFile
 import json
 import logging as log
 
-class prep_read:
+# flow_file = path\to\flow_file
+
+class decode_flow:
     
-    def __init__(self, prep_path = 'None'
+    def __init__(self, flow_file = 'None'
                  ):    
         
-        self.path = prep_path
+        self.path = flow_file
         
         self.conn_class_info_dict = {'hyper':'dbname',
                                      'excel-direct':'filename'
@@ -50,36 +52,6 @@ class prep_read:
         
         return data_json
     
-    '''    
-    def get_inputs(self):
-        
-        inputs = []     
-        connections = self.flow['connections']
-        for connection in list(connections):
-            con_class = connections[connection]['connectionAttributes']['class'] 
-            conn_info_name = self.conn_class_info_dict[con_class]   
-            input_path = connections[connection]['connectionAttributes'][conn_info_name]
-            inputs.append(input_path)
-            
-        return inputs
-    
-    
-    def get_outputs(self):
-        
-        outputs = []
-        nodes = self.flow['nodes']
-        for node_id in list(nodes):
-            node = nodes[node_id]
-            if node['baseType'] == 'output':
-                for output_type in self.output_types:
-                    try:
-                        output_path = node[output_type]
-                        outputs.append(output_path)
-                    except:
-                        pass             
-        
-        return outputs
-    '''
 
     def consistent_path(self, path):
         
@@ -115,13 +87,13 @@ class prep_read:
         con_type = 'localfile'
         if baseType == self.input_name:
             try:
-                name = node['connectionAttributes']['filename']
+                name = connection['connectionAttributes']['filename']
             except:
                 # for old version
                 try:
-                    name = node['connectionAttributes']['directory']
+                    name = node['connectionAttributes']['filename']
                 except:
-                    name = connection['connectionAttributes']['filename']
+                    name = node['connectionAttributes']['directory']
          
         if baseType == self.output_name:          
             name = node['csvOutputFile']

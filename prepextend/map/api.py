@@ -5,4 +5,4 @@ Created on Tue Oct  1 15:33:08 2019
 @author: WEIHAO
 """
 
-from prepextend.run.run import run as flow_run
+from prepextend.map.map import flows_roadmap, construct_sourcesDF
