@@ -10,3 +10,4 @@ setup.py
 environment.yml
 upload_note.txt
 for reference
+tmp*
