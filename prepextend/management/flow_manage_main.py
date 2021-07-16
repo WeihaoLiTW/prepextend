@@ -132,7 +132,7 @@ class flow_manage:
             for tag in ignore_tags:
                 if tag in flow_path:
                     return True
-                return False
+            return False
 
         if self._flow_pool is None:
             raise Exception("There is no flow pool setting in config")
