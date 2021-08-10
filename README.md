@@ -15,10 +15,11 @@ A toolset to expand the functionality for the Tableau Prep
    - 4.g. Can mark csv outputs as checkpoints and verify them after running file to secure the data quality.
    - 4.h. On top of feature 4-g, notify by Slack when getting issues in checkpoints.
 	
-Note: Featurs 2,3 are in the limited scope of connection test: 
-	  Local file type: excel, csv, hyper
-	  Non-Local: Postgres DB, Tableau Server  
-	  If your Tableau Prep files contain some connection out of the above scope, might get error or incorrect result.
+### Note: 
+- Featurs 2,3 are in the limited scope of connection test: 
+   - Local file type: excel, csv, hyper
+   - Non-Local: Postgres DB, Tableau Server  
+   - If your Tableau Prep files contain some connection out of the above scope, might get error or incorrect result.
 
 ## Restriction
 Currently, Windows OS support only.
