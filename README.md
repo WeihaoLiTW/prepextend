@@ -25,7 +25,7 @@ Currently, Windows OS support only.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install.
 
 ```bash
 pip install prepextend
@@ -33,9 +33,10 @@ pip install prepextend
 
 ## Usage
 
-```python
+# 1. Run Tableau Prep file
 
-# Features-1, returns runnning log 
+```python
+# returns runnning log 
 from prepextend import flow_run
 
 running_log = flow_run(prep_script = "[Tableau Prep Builder install location]\Tableau Prep Builder <version>\scripts",
@@ -43,26 +44,29 @@ running_log = flow_run(prep_script = "[Tableau Prep Builder install location]\Ta
                        credential_file = "path\to\[your credential file name].json"
                        )
 # eg. prep_script = "...\Tableau\Tableau Prep Builder 2020.2\scripts"
+```
 
-
-# Features-2, returns flow_info 
+# 2. Read the Tableau Prep file
+```python
+# returns flow_info 
 from prepextend import flow_read
 
 flow_info = flow_read("path\to\[your flow file name].tfl")
+```
 
-
-# Features-3, return a sequential list with organized dependence.
+# 3. Produce a flows execution sequential list with organized dependence.
+```python
 from prepextend import flows_roadmap
 
 depend_flows = ['...\flow_3.tfl', '...\flow_1.tfl', '...\flow_2.tfl']
-# dependency = flow 1 -> flow 2 -> flow 3
+## dependency = flow 1 -> flow 2 -> flow 3
 
 target_flows = [
     '...\flow_3.tfl',
     ]
 
 flow_map = flows_roadmap(target_flows, depend_flows)
-# flow_map will be ['...\flow_1.tfl', '...\flow_2.tfl', '...\flow_3.tfl']
+## flow_map will be ['...\flow_1.tfl', '...\flow_2.tfl', '...\flow_3.tfl']
 
 target_flows = [
     '...\flow_2.tfl',
@@ -70,17 +74,22 @@ target_flows = [
 
 flow_map = flows_roadmap(target_flows, depend_flows)
 # flow_map = ['...\flow_1.tfl', '...\flow_2.tfl']
+```
 
-
-# Features-4, set config
+# 4. Set config for add-on features
+```python
 from prepextend import flow_manage
 
 flow_management = flow_manage(general_config, version_assigned)
+```
 
-# Features-4 a~e
+# 4.a ~ 4.e, 4.h Run flow with add-on features
+```python
 running_log = flow_management.run_flow("path\to\[your flow file name].tfl")
+```
 
-# Features-4-f
+# 4.f When produce flow_map, apply the assign a folder as a pool to the group of the Tableau prep files located without input depend_flows
+```python
 target_flows = [
     '...\flow_3.tfl',
     ]
