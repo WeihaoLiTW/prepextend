@@ -5,15 +5,15 @@ A toolset to expand the functionality for the Tableau Prep
 1. Run Tableau Prep file through Python API.
 2. Read the Tableau Prep file as a dict, which has an overview of all inputs and outputs.
 3. Produce a flows execution sequential list from a group of the Tableau prep files with dependence.
-4. The below features needs to setup a config file:
-   a. On top of feature 1, add retry when there is an error in running Tableau Prep file
-   b. On top of feature 1, notify by Slack when running error.
-   c. On top of feature 1, assign a specific version of Tableau Prep in a specific file to run.
-   d. On top of feature 1, save running log.
-   e. On top of feature 1, no more need to locate the credential file
-   f. On top of feature 3, can assign a folder as a pool to the group of the Tableau prep files located.
-   g. Can mark csv outputs as checkpoints and verify them after running file to secure the data quality.
-   h. On top of feature 4-g, notify by Slack when getting issues in checkpoints.
+4. Add-on features (require setting the config file):
+   - 4.a. On top of feature 1, add retry when there is an error in running Tableau Prep file
+   - 4.b. On top of feature 1, notify by Slack when running error.
+   - 4.c. On top of feature 1, assign a specific version of Tableau Prep in a specific file to run.
+   - 4.d. On top of feature 1, save running log.
+   - 4.e. On top of feature 1, no more need to locate the credential file
+   - 4.f. On top of feature 3, can assign a folder as a pool to the group of the Tableau prep files located.
+   - 4.g. Can mark csv outputs as checkpoints and verify them after running file to secure the data quality.
+   - 4.h. On top of feature 4-g, notify by Slack when getting issues in checkpoints.
 	
 Note: Featurs 2,3 are in the limited scope of connection test: 
 	  Local file type: excel, csv, hyper
@@ -33,7 +33,7 @@ pip install prepextend
 
 ## Usage
 
-# 1. Run Tableau Prep file
+### 1. Run Tableau Prep file
 
 ```python
 # returns runnning log 
@@ -46,7 +46,7 @@ running_log = flow_run(prep_script = "[Tableau Prep Builder install location]\Ta
 # eg. prep_script = "...\Tableau\Tableau Prep Builder 2020.2\scripts"
 ```
 
-# 2. Read the Tableau Prep file
+### 2. Read the Tableau Prep file
 ```python
 # returns flow_info 
 from prepextend import flow_read
@@ -54,41 +54,41 @@ from prepextend import flow_read
 flow_info = flow_read("path\to\[your flow file name].tfl")
 ```
 
-# 3. Produce a flows execution sequential list with organized dependence.
+### 3. Produce a flows execution sequential list with organized dependence.
 ```python
 from prepextend import flows_roadmap
 
 depend_flows = ['...\flow_3.tfl', '...\flow_1.tfl', '...\flow_2.tfl']
-## dependency = flow 1 -> flow 2 -> flow 3
+# dependency = flow 1 -> flow 2 -> flow 3
 
 target_flows = [
     '...\flow_3.tfl',
     ]
 
 flow_map = flows_roadmap(target_flows, depend_flows)
-## flow_map will be ['...\flow_1.tfl', '...\flow_2.tfl', '...\flow_3.tfl']
+# flow_map will be ['...\flow_1.tfl', '...\flow_2.tfl', '...\flow_3.tfl']
 
 target_flows = [
     '...\flow_2.tfl',
     ]
 
 flow_map = flows_roadmap(target_flows, depend_flows)
-# flow_map = ['...\flow_1.tfl', '...\flow_2.tfl']
+#  flow_map will be ['...\flow_1.tfl', '...\flow_2.tfl']
 ```
 
-# 4. Set config for add-on features
+### 4. Set config for add-on features
 ```python
 from prepextend import flow_manage
 
 flow_management = flow_manage(general_config, version_assigned)
 ```
 
-# 4.a ~ 4.e, 4.h Run flow with add-on features
+### 4.a ~ 4.e, 4.h Run flow with add-on features
 ```python
 running_log = flow_management.run_flow("path\to\[your flow file name].tfl")
 ```
 
-# 4.f When produce flow_map, apply the assign a folder as a pool to the group of the Tableau prep files located without input depend_flows
+### 4.f When produce flow_map, apply the assign a folder as a pool to the group of the Tableau prep files located without input depend_flows
 ```python
 target_flows = [
     '...\flow_3.tfl',
