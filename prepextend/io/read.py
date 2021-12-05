@@ -125,7 +125,11 @@ class decode_flow:
         con_type = 'db'
         if baseType == self.input_name:
             server = connection['connectionAttributes']['server']
+            # get dbname 
             dbname = connection['connectionAttributes']['dbname']
+            if dbname == '':
+                dbname = node['connectionAttributes']['dbname']
+            # get table name
             try:
                 table = node['relation']['table']
             except:
@@ -192,7 +196,8 @@ class decode_flow:
                     if 'LoadExcel' in node['nodeType']:
                         source_input = self.format_excel(node, baseType, connection)               
                     # db
-                    if connection['connectionAttributes']['class'] == 'postgres':
+                    if (connection['connectionAttributes']['class'] == 'postgres' or 
+                        connection['connectionAttributes']['class'] == 'snowflake'):
                         source_input = self.format_db(node, baseType, connection)
                     # tableauserver
                     if 'LoadSqlProxy' in node['nodeType']:
