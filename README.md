@@ -1,7 +1,7 @@
 # prepextend
 A toolset to expand the functionality for the Tableau Prep
 
-## Key Features
+## What are the Key Features?
 1. Run Tableau Prep file through Python API.
 2. Read the Tableau Prep file as a dict, which has an overview of all inputs and outputs.
 3. Produce a flows execution sequential list from a group of the Tableau prep files with dependence.
@@ -15,16 +15,16 @@ A toolset to expand the functionality for the Tableau Prep
    - 4.g. Can mark csv outputs as checkpoints and verify them after running file to secure the data quality.
    - 4.h. On top of feature 4-g, notify by Slack when getting issues in checkpoints.
 	
-### Note: 
-- Featurs 2,3 are in the limited scope of connection test: 
+### Please Note! 
+- Featurs 2 & 3 are in the limited scope of testing: 
    - Local file type: excel, csv, hyper
    - Non-Local: Postgres DB, Snowflake, Tableau Server  
    - If your Tableau Prep files contain some connection out of the above scope, might get error or incorrect result.
 
-## Restriction
+## What's the Restriction?
 Currently, Windows OS support only.
 
-## Installation
+## How to Install?
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install.
 
@@ -32,7 +32,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install.
 pip install prepextend
 ```
 
-## Usage
+## How to Use?
 
 ### 1. Run Tableau Prep file
 
