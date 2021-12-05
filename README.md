@@ -18,7 +18,7 @@ A toolset to expand the functionality for the Tableau Prep
 ### Note: 
 - Featurs 2,3 are in the limited scope of connection test: 
    - Local file type: excel, csv, hyper
-   - Non-Local: Postgres DB, Tableau Server  
+   - Non-Local: Postgres DB, Snowflake, Tableau Server  
    - If your Tableau Prep files contain some connection out of the above scope, might get error or incorrect result.
 
 ## Restriction
