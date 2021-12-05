@@ -37,7 +37,7 @@ check_file_tags:
 # eg of check_file_tag: "!"  (Please with the quotation mark)
 
 
-# enable the feature 4.h
+# enable the feature 4.b & 4.h 
 notify_channels:
 - name: slack 
   webhook_url: [https://hooks.slack.com/services/...]
