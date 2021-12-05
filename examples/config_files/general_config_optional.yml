@@ -1,0 +1,43 @@
+# Optional Config
+# Step1: Choose which feature you want to enable (features list please see readme )
+# Step2: Edit the block of config for the feature
+# Ster3: Copy the config and paste them in the end of "general_config.yml"
+
+
+# enable the feature 4.c
+prep_scripts_4_version_assigned:
+  [version]: [the path to the tableau prep scripts]
+# eg. 2019.4: C:\Program Files\Tableau\Tableau Prep Builder 2019.4\scripts
+# also need "version_assigned.yml" to define tfl files vs version
+
+
+# enable the feature 4.f
+flow_pool:
+  pool_dir: [the top parent folder you save the tfl files]
+  ignore_tags:
+  - [ignore_tag_1]
+  - [ignore_tag_2]
+# ignore_tag make you can ignore the tfl file where its path contains anyone of the defined ignore_tags
+# eg of ignore_tag: _dev
+
+
+# enable the feature 4.d
+log_save_dir: [the path of the folder you want to save the log]
+# eg. C:\...\save_log_here
+
+
+# enable the feature 4.g
+check_file_tags:
+- [check_file_tag_1]
+- [check_file_tag_2]
+# checking file is to check the csv with tags in the outputs of flow and send warning message if the csv has >=1 row.
+# eg of check_file_tag: "!"  (Please with the quotation mark)
+
+
+# enable the feature 4.h
+notify_channels:
+- name: slack 
+  webhook_url: [https://hooks.slack.com/services/...]
+# how get the webhook_url? 
+# Step1: create an app in https://api.slack.com/apps
+# Step2: adding channel in "Incoming Webhooks"

@@ -1,0 +1,17 @@
+# Require to Edit
+
+default_prep_script: C:\...\Tableau\Tableau Prep Builder 2020.2\scripts
+# Locate the default tableau prep script program.
+
+# Optional to Edit
+
+retry_times: 1
+# enable feature 4.a; retry_times need > 0; default = 0
+
+credentials_file_suffix: _Credentials.json
+# enable feature 4.e; credential_file = tfl_name + credentials_file_suffix
+# the dir of credential should = the dir of tfl file
+
+
+# You can paste the Optional Config in the below
+# Optional Config example please refer to "general_config_optional.yml"
