@@ -6,9 +6,12 @@
 
 # enable the feature 4.c
 prep_scripts_4_version_assigned:
-  [version]: [the path to the tableau prep scripts]
-# eg. 2019.4: C:\Program Files\Tableau\Tableau Prep Builder 2019.4\scripts
+  [version_A]: [the path to the tableau prep scripts of version_A]
+  [version_B]: [the path to the tableau prep scripts of version_B]
 # also need "version_assigned.yml" to define tfl files vs version
+# eg. 
+# 2019.4: C:\Program Files\Tableau\Tableau Prep Builder 2019.4\scripts
+# 2020.2: C:\Program Files\Tableau\Tableau Prep Builder 2020.2\scripts
 
 
 # enable the feature 4.f

@@ -1,2 +1,7 @@
 # version assigned
-C:\Dropbox\Fork\bluex\prepextend\_tests\_samples\version_assigned\kinds_input_output_types.tfl: 2019.4
+[absolute path of the tfl_A]:[one of the versions you defined in the "general_config.yml"]
+[absolute path of the tfl_B]:[one of the versions you defined in the "general_config.yml"]
+
+# eg.
+# C:\....\tfl_A: 2019.4
+# C:\....\tfl_B: 2020.2
